@@ -83,16 +83,15 @@ abstract class Image
      * After this is called, the object doesn't hold a valid image any more.
      * No operation should be called after that.
      */
+
     public function destroy()
     {
         if ($this->isValid() && !$this->handleReleased) {
-            if (is_resource($this->handle)) {
-                imagedestroy($this->handle);
-            } elseif ($this->handle instanceof \GdImage) {
+            // PHP 8.0+ uses objects, just unset them to free memory
+            if ($this->handle instanceof \GdImage) {
                 unset($this->handle);
             }
-        }
-
+        }    
         $this->handle = null;
     }
 
