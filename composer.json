@@ -1,8 +1,11 @@
 {
-    "name": "smottt/wideimage",
+    "name": "ddowie/wideimage",
     "description": "An open-source PHP library for image manipulation",
     "homepage": "http://wideimage.sourceforge.net",
-    "type": "library",
+    "type": "library",    
+    "replace": {
+        "smottt/wideimage": "*"
+    },
     "license": [
         "GPL-2.0",
         "LGPL-2.1"
